@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixFlow - Trang chủ Technician</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <!-- MENU BÊN TRÁI -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">🔧</span>
+                <span>FixFlow</span>
+            </div>
+
+            <nav class="menu">
+                <a href="#" class="menu-item" data-page="Trang chủ">
+                    <span>⌂</span> Trang chủ
+                </a>
+
+                <a href="#" class="menu-item active"
+                   data-page="Công việc của tôi">
+                    <span>▣</span> Công việc của tôi
+                </a>
+
+                <a href="#" class="menu-item"
+                   data-page="Yêu cầu của tôi">
+                    <span>▧</span> Yêu cầu của tôi
+                </a>
+
+                <a href="#" class="menu-item"
+                   data-page="Thông báo">
+                    <span>♧</span> Thông báo
+                </a>
+
+                <a href="#" class="menu-item" data-page="Tài khoản">
+                    <span>♙</span> Tài khoản
+                </a>
+
+                <a href="#" class="menu-item" data-page="Cài đặt">
+                    <span>⚙</span> Cài đặt
+                </a>
+            </nav>
+        </aside>
+
+        <!-- NỘI DUNG CHÍNH -->
+        <main class="main-content">
+
+            <header class="welcome">
+                <h2>Xin chào, Trần Văn B 👋</h2>
+                <p>Kỹ thuật viên</p>
+            </header>
+
+            <!-- THẺ THỐNG KÊ -->
+            <section class="statistics">
+
+                <div class="stat-card blue">
+                    <h1 id="processingCount">0</h1>
+                    <p>Việc đang xử lý</p>
+                </div>
+
+                <div class="stat-card orange">
+                    <h1 id="waitingCount">0</h1>
+                    <p>Chờ nhận</p>
+                </div>
+
+                <div class="stat-card green">
+                    <h1 id="completedCount">0</h1>
+                    <p>Hoàn thành hôm nay</p>
+                </div>
+
+            </section>
+
+            <!-- DANH SÁCH CÔNG VIỆC -->
+            <section class="work-section">
+                <h2 id="sectionTitle">Công việc của tôi</h2>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã yêu cầu</th>
+                                <th>Thiết bị</th>
+                                <th>Loại sự cố</th>
+                                <th>Mức độ ưu tiên</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="workList">
+                            <!-- JavaScript tạo các dòng công việc -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <p id="emptyMessage" class="empty-message" hidden>
+                    Không có công việc nào.
+                </p>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- HỘP THOẠI CHI TIẾT CÔNG VIỆC -->
+    <div class="modal" id="detailModal" aria-hidden="true">
+        <div class="modal-content" role="dialog"
+             aria-modal="true" aria-labelledby="modalTitle">
+
+            <button class="close-btn" id="closeModal"
+                    aria-label="Đóng">&times;</button>
+
+            <h2 id="modalTitle">Chi tiết công việc</h2>
+            <div id="detailContent"></div>
+
+            <button class="close-button" id="confirmClose">
+                Đóng
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
